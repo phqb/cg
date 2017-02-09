@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <cstdio>
 #include "../include/point.h"
 #include "../include/vector2.h"
 #include "../include/line.h"
@@ -7,6 +7,7 @@
 #include "../include/circle.h"
 #include "../include/halfplane.h"
 #include "../include/polygon.h"
+#include "../include/union.h"
 
 int main() {
 

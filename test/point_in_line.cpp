@@ -3,15 +3,15 @@
 #include "../include/utils.h"
 #include "../include/compare.h"
 
-#include "../include/point.h"
-#include "../include/line.h"
+#include "../include/point_2.h"
+#include "../include/line_2.h"
 
 int point_in_line() {
     Utils utils;
     for (long test = 0; test < 1000000; ++test) {
-        cg::Point pointA(utils.randFloat(1000), utils.randFloat(1000));
-        cg::Point pointB(utils.randFloat(1000), utils.randFloat(1000));
-        cg::Line line(pointA, pointB);
+        cg::Point_2 pointA(utils.randFloat(1000), utils.randFloat(1000));
+        cg::Point_2 pointB(utils.randFloat(1000), utils.randFloat(1000));
+        cg::Line_2 line(pointA, pointB);
         if (!line.contain(pointA)) {
             printf("Failed at test:\n");
             pointA.show();
@@ -26,9 +26,9 @@ int point_in_line() {
             printf("point in line but program don't think so\n");
             return -1;
         }
-        cg::Line anotherLine(line.a, line.b, line.c + 2*Compare::EPSILON);
-        double x = utils.randFloat(1000);
-        cg::Point notContained(x, (-anotherLine.a*x - anotherLine.c)/anotherLine.b);
+        cg::Line_2 anotherLine_2(line.a, line.b, line.c + 2*Compare::EPSILON);
+        long double x = utils.randFloat(1000);
+        cg::Point_2 notContained(x, (-anotherLine_2.a*x - anotherLine_2.c)/anotherLine_2.b);
         if (line.contain(notContained)) {
             printf("Failed at test:\n");
             notContained.show();

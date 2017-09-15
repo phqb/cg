@@ -8,7 +8,7 @@ class Utils {
     public:
         Utils();
         int randInt(int absMax);
-        double randFloat(int absMax);
+        long double randFloat(int absMax);
 };
 
 #endif

@@ -5,10 +5,10 @@
 
 class Compare {
     public:
-        static const double EPSILON;
-        static const double ARC_EPSILON;
-        static int compare(const double a, const double b);
-        static int arcCompare(const double a, const double b);
+        static const long double EPSILON;
+        static const long double ARC_EPSILON;
+        static int compare(const long double a, const long double b);
+        static int arcCompare(const long double a, const long double b);
 };
 
 #endif

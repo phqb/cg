@@ -3,25 +3,30 @@
 
 #include <cstdio>
 #include <cmath>
+#include "compare.h"
 
 namespace cg {
-	class Point {
+	class Point_2 {
 		public:
-			double x, y;
+			long double x, y;
 
 			void show() const;
 
-			Point();
+			Point_2();
 
-			Point(double x, double y);
+			Point_2(long double x, long double y);
+
+			bool operator== (const Point_2 & p) const;
+
+			bool operator!= (const Point_2 & p) const;
 
 			// Compute the distance between this and p
 			// The result is not taken square root for performance purpose
-			double dist2(const Point & p) const;
+			long double dist2(const Point_2 & p) const;
 
 			// Return the middle point between this and p
 			// The three points lie on the same line
-			Point midPoint(const Point & p) const;
+			Point_2 midPoint(const Point_2 & p) const;
 	};
 }
 

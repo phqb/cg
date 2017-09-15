@@ -3,47 +3,47 @@
 
 #include <cstdio>
 #include <cmath>
-#include "point.h"
+#include "point_2.h"
 #include "compare.h"
 
 namespace cg {
-	class Vector2 : public Point {
+	class Vector_2 : public Point_2 {
 		public:
-			Vector2();
+			Vector_2();
 
-			Vector2(const Point & p);
+			Vector_2(const Point_2 & p);
 
-			Vector2(double x, double y);
+			Vector_2(long double x, long double y);
 
-			Vector2(const Vector2 & v);
+			Vector_2(const Vector_2 & v);
 
-			Vector2(const Point & a, const Point & b);
+			Vector_2(const Point_2 & a, const Point_2 & b);
 
 			// Compute the dot product of this vector and v
-			double dotProduct(const Vector2 & v) const;
+			long double dotProduct(const Vector_2 & v) const;
 
 			// Compute the cross product of this vector and v
-			double crossProduct(const Vector2 & p) const;
+			long double crossProduct(const Vector_2 & p) const;
 
 			// Compute the angle between this vector and v
 			// 0 <= angle <= pi/2
-			double angle(const Vector2 & v) const;
+			long double angle(const Vector_2 & v) const;
 
 			// Compute this vector's length
-			double length() const;
+			long double length() const;
 
 			// Get a perpendicular vector of this vector
-			Vector2 getNorm() const;
+			Vector_2 getNorm() const;
 
 			// For a given start point, get the end point which
 			// this vector can be contructed by
-			Point getEndPoint(const Point & startPoint) const;
+			Point_2 getEndPoint_2(const Point_2 & startPoint_2) const;
 			
 			// In-place resize this vector to a given length
-			void resize(double length);
+			void resize(long double length);
 			
 			// In-place rotate this vector by a origin point and angle
-			void rotate(const Point & org, double rad);
+			void rotate(const Point_2 & org, long double rad);
 	};
 }
 

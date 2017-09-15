@@ -3,19 +3,20 @@
 
 #include <cmath>
 #include <utility>
-#include "polygon.h"
+#include <tuple>
+#include "convex_polygon.h"
 #include "circle.h"
 #include "compare.h"
 #include "halfplane.h"
-#include "vector2.h"
+#include "vector_2.h"
 #include "triangle.h"
 
 namespace cg {
-    double unionArea(const Cirlce & c, const Point & p1, const Point & p2, const Point & p3);
+    long double unionArea(const Circle & c, const Triangle & trig);
 
-    double unionArea(const Circle & c, const Polygon & pl);
+    long double unionArea(const Circle & c, const ConvexPolygon & pl);
 
-    double unionArea(const Circle & c, const HalfPlane & hl);
+    long double unionArea(const Circle & c, const HalfPlane & hl);
 }
 
 #endif

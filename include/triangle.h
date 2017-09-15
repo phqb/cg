@@ -2,21 +2,26 @@
 #define TRIANGLE_H
 
 #include <cmath>
-#include "point.h"
-#include "segment.h"
+#include "point_2.h"
+#include "segment_2.h"
+#include "halfplane.h"
 
 namespace cg {
     class Triangle {
         public:
-            Point points[3];
-            Segment edges[3];
-            Point edgesOppositePoint[3];
+            Point_2 points[3];
+            
+            Segment_2 edges[3];
+
+            Point_2 edgesOppositePoint_2[3];
+
+            HalfPlane edgeHalfPlanes[3];
 
             Triangle();
 
-            Triangle(const Point & p1, const Point & p2, const Point & p3);
+            Triangle(const Point_2 & p1, const Point_2 & p2, const Point_2 & p3);
 
-            double area() const;
+            long double area() const;
     };
 }
 

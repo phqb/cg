@@ -8,6 +8,7 @@
 #include "circle_intersect_line.cpp"
 #include "circle_radical_axe.cpp"
 #include "point_in_halfplane.cpp"
+#include "union_area_circle_triangle.cpp"
 
 int main() {
     printf("Testing point in line...");
@@ -65,6 +66,13 @@ int main() {
         return -1;
     } else
         printf("Passed\n");
-
+        
+    printf("Testing union area circle and triangle...");
+    if (union_area_circle_triangle() != 0) {
+        printf("Failed\n");
+        return -1;
+    } else
+        printf("Passed\n");
+        
     return 0;
 }
